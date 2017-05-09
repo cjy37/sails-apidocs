@@ -1,0 +1,9 @@
+tr(id=symbol.ctx.name)
+  td= symbol.ctx.name
+  td= symbol.type
+  td
+    if symbol.description && symbol.description.full
+      | !{symbol.description.full}
+  td
+    if symbol.description && symbol.description.extra
+      | !{symbol.description.extra}

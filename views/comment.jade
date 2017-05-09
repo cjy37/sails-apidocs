@@ -1,11 +1,12 @@
 if symbol.ctx.name
-  section(id=symbol.ctx.name)
+  if symbol.ctx.name!=='exports'
+    section(id=symbol.ctx.name)
       h3= symbol.ctx.name
       h5.subheader
       if !symbol.gtype && symbol.type
         p
           div(class=["label", "label-inverse", "radius", "ctx-type"])= symbol.type
-      else
+      else if symbol.ctx.name!=='exports'
         p
           mixin labelForSymbolType(symbol)
           if symbol.ctx.string
@@ -18,9 +19,9 @@ if symbol.hasParams
   table.table.table-bordered.table-striped
     thead
       tr
-        th(style="width:20%") Option name
-        th(style="width:20%") Type
-        th Description
+        th(style="width:20%") 参数名
+        th(style="width:20%") 数据类型
+        th 描述
     tbody
       each tag in symbol.tags
         if tag.type == 'param'
