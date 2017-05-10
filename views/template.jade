@@ -188,8 +188,9 @@ html
         });
         var isShowScrollspy = true;
         var scrollspy = document.getElementsByClassName('scrollspy');
-        document.body.addEventListener("click", function clickBody() {
+		var defaultDisplay = scrollspy[0].style.display;
+        document.body.addEventListener("dblclick", function clickBody() {
             isShowScrollspy = !isShowScrollspy;
-            scrollspy[0].style.display = isShowScrollspy?'':'none';
+            scrollspy[0].style.display = isShowScrollspy ? defaultDisplay : 'none';
         });
       })
