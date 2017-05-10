@@ -186,4 +186,10 @@ html
           , bottom: 50
           }
         });
+		var isShowScrollspy = true;
+		var scrollspy = document.getElementsByClassName('scrollspy');
+		document.body.addEventListener("click", function clickBody() {
+			isShowScrollspy = !isShowScrollspy;
+			scrollspy[0].style.display = isShowScrollspy?'':'none';
+		});
       })
