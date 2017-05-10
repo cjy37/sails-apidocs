@@ -15,6 +15,7 @@ if symbol.ctx.name
             |  ->
             div(class=["label", "label-inverse", "radius", "ctx-type"])= 'return'
             div(class=["label", "label-info", "radius", "ctx-type"])= symbol.return.types.join(' ')
+            | !{symbol.return.description}
 
 if symbol.hasParams
   table.table.table-bordered.table-striped
@@ -31,13 +32,13 @@ if symbol.hasParams
             td
               div(class=["label", "label-info", "radius", "ctx-type"])= tag.types
             td !{tag.description}
-      if symbol.return
-        tr
-          td= "返回"
-          td
-            div(class=["label", "label-inverse", "radius", "ctx-type"])= 'return'
-            div(class=["label", "label-info", "radius", "ctx-type"])= symbol.return.types.join(' ')
-          td !{symbol.return.description}
+      //- if symbol.return
+      //-   tr
+      //-     td
+      //-       div(class=["label", "label-inverse", "radius", "ctx-type"])= 'return'
+      //-     td
+      //-       div(class=["label", "label-info", "radius", "ctx-type"])= symbol.return.types.join(' ')
+      //-     td !{symbol.return.description}
 
 .description !{symbol.description.full} !{symbol.description.extra}
 if symbol.code
